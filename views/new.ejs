@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create a new post</title>
+    </head>
+    <body>
+        <h2>New Post</h2>
+        <form method="POST" action="/posts" id="postForm">
+            <label for="username">Username: </label>
+            <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Enter your username"
+            />
+            <br /><br />
+            <label for="content">Content: </label>
+            <textarea
+                name="content"
+                id="content"
+                placeholder="What's on your mind?"
+                rows="10"
+                cols="30"
+                draggable="false"
+            ></textarea
+            ><br /><br /><br />
+            <a href="/posts">Cancel</a>&nbsp;&nbsp;&nbsp;
+            <button type="submit">Post</button>
+        </form>
+        <script src="/validate.js"></script>
+    </body>
+</html>

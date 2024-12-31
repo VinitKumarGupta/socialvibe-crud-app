@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SocialVibe</title>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/home-styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h2>SocialVibe</h2>
+                <div class="search">
+                    <input type="text" placeholder="Search..." />
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="side-panel">
+                <div class="trending-card">
+                    <h3>Trending Topics</h3>
+                    <ul>
+                        <li><a>#SummerVibes</a></li>
+                        <li><a>#TechTalk</a></li>
+                        <li><a>#FoodieFriday</a></li>
+                        <li><a>#FitnessFun</a></li>
+                        <li><a>#TravelDreams</a></li>
+                    </ul>
+                </div>
+                <div class="create-card">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <a href="http://localhost:5001/posts/new">Create a post</a>
+                </div>
+            </div>
+            <div class="right-panel">
+                <% posts.forEach(post => { %>
+                <div class="post-card">
+                    <div class="profile">
+                        <i class="fa-regular fa-user"></i>
+                        <h4><%= post.username %></h4>
+                    </div>
+                    <p><%= post.content %></p>
+                    <div class="links">
+                        <div class="like-comment-share">
+                            <div class="conti like">
+                                <i class="fa-regular fa-heart"></i>0
+                            </div>
+                            <div class="conti comment">
+                                <i class="fa-regular fa-comment"></i>Comment
+                            </div>
+                        </div>
+                        <div class="details-edit">
+                            <a href="http://localhost:5001/posts/<%= post.id %>"
+                                >Details</a
+                            >
+                            <a
+                                href="http://localhost:5001/posts/<%= post.id %>/edit"
+                                >Edit</a
+                            >
+                            <FORM
+                                method="POST"
+                                action="/posts/<%= post.id %>?_method=DELETE"
+                            >
+                                <button class="delete-btn">DELETE</button></FORM
+                            >
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </main>
+        <script src="/app.js"></script>
+    </body>
+</html>
