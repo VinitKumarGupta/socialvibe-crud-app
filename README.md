@@ -34,7 +34,6 @@ By default, the application runs on `http://localhost:5001`.
 4. **Access the App Open your browser and navigate to `http://localhost:5001/posts`.**
 
 ## File Structure
-    ```arduino
     socialvibe/
     ├── public/
     │   ├── css/
@@ -49,13 +48,13 @@ By default, the application runs on `http://localhost:5001`.
 
 ## Routes
 
-GET /posts: Display all posts
-GET /posts/new: Form to create a new post
-POST /posts: Add a new post
-GET /posts/:id: View details of a single post
-GET /posts/:id/edit: Form to edit a post
-PATCH /posts/:id: Update a post
-DELETE /posts/:id: Delete a post
+- GET /posts: Display all posts
+- GET /posts/new: Form to create a new post
+- POST /posts: Add a new post
+- GET /posts/:id: View details of a single post
+- GET /posts/:id/edit: Form to edit a post
+- PATCH /posts/:id: Update a post
+- DELETE /posts/:id: Delete a post
 
 ## Known Issues
 
